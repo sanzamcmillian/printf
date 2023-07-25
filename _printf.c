@@ -5,7 +5,7 @@
 /**
  * _printf - prints all characters
  * @format: formats the string used
- * Return: no of characters counted
+ * Return: length of the string
  */
 
 int _printf(const char *format, ...)
@@ -50,6 +50,15 @@ int _printf(const char *format, ...)
 	va_end(arg);
 	return (count);
 }
+
+/**
+ *convert - converts num to prefered base
+ *
+ *@num: the integer value to be converted
+ *@base: integer to be used for conversion of num
+ *Return: a character
+ */
+
 char *convert(unsigned int num, int base)
 {
 	static char representation[] = "0123456789ABCDEF";
