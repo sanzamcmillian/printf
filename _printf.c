@@ -45,6 +45,14 @@ int _printf(const char *format, ...)
 				break;
 			case '%' : putchar('%');
 				break;
+			case 'd' : i = va_arg(arg, int);
+				if(i < 0)
+				{
+					i = -i;
+					putchar('-');
+				}
+				puts(convert(i,10));
+				break;
 		}
 	}
 	va_end(arg);
