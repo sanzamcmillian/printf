@@ -46,7 +46,6 @@ int _printf(const char *format, ...)
 			case '%':
 				putchar('%');
 				break;
-			case 'd':
 			case 'i':
 				i = va_arg(arg, int);
 				if (i < 0)
