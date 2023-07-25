@@ -2,7 +2,9 @@
 #include <stdarg.h>
 
 /**
- *
+ * _printf - prints all characters
+ * @format: formats the string used
+ * Return: no of characters counted
  */
 
 int _printf(const char *format, ...)
@@ -47,7 +49,6 @@ int _printf(const char *format, ...)
 	va_end(arg);
 	return (count);
 }
-
 char *convert(unsigned int num, int base)
 {
 	static char representation[] = "0123456789ABCDEF";
