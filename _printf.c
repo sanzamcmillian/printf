@@ -29,6 +29,13 @@ int _printf(const char *format, ...)
 
 		round++;
 
+		if (*round == '%')
+		{
+			putchar('%');
+			count++;
+			continue;
+		}
+
 		switch(*round)
 		{
 			case 'c' : i = va_arg(arg, int);
