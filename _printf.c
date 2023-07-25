@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	{
 		if (*round != '%')
 		{
-			putchar(*round);
+			putchaa(*round);
 			count++;
 			continue;
 		}
@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 
 		if (*round == '%')
 		{
-			putchar('%');
+			putchaa('%');
 			count++;
 			continue;
 		}
@@ -40,20 +40,20 @@ int _printf(const char *format, ...)
 		{
 			case 'c':
 				i = va_arg(arg, int);
-				putchar((char)i);
+				putchaa((char)i);
 				count++;
 				break;
 			case 's':
 				s = va_arg(arg, char *);
 				while (*s != '\0')
 				{
-					putchar(*s);
+					putchaa(*s);
 					s++;
 					count++;
 				}
 				break;
 			case '%':
-				putchar('%');
+				putchaa('%');
 				break;
 			case 'd':
 				i = va_arg(arg, int);
