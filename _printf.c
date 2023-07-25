@@ -40,8 +40,7 @@ int _printf(const char *format, ...)
 					count++;
 				}
 				break;
-			case '%' : s = va_arg(arg, char);
-				putchar(char(s));
+			case '%' : putchar('%');
 				break;
 		}
 	}
