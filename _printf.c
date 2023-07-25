@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 
- 	for (round = format; *round != '\0'; round++)
+	for (round = format; *round != '\0'; round++)
 	{
 		if (*round != '%')
 		{
@@ -28,21 +28,20 @@ int _printf(const char *format, ...)
 		round++;
 		switch (*round)
 		{
-			case 'c' :
+			count++;
+			case 'c':
 				i = va_arg(arg, int);
 				putchar((char)i);
-				count++;
 				break;
-			case 's' :
+			case 's':
 				s = va_arg(arg, char *);
 				while (*s != '\0')
 				{
 					putchar(*s);
 					s++;
-					count++;
 				}
 				break;
-			case '%' :
+			case '%':
 				putchar('%');
 				break;
 		}
