@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		round++;
 		switch (*round)
 		{
-			
+
 			case 'c':
 				i = va_arg(arg, int);
 				putchar((char)i);
@@ -48,7 +48,7 @@ int _printf(const char *format, ...)
 				break;
 		}
 	}
-	putchar('\n');
 	va_end(arg);
+	putchar('\n');
 	return (count);
 }
