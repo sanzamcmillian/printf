@@ -45,20 +45,15 @@ int _printf(const char *format, ...)
 				break;
 			case 'd':
 				i  = va_arg(arg, int);
-				if (i < 0)
-				{
-					_putchar('-');
-					i = -i;
-				}
-				puts(convert(i, 10));
+				printf("%d\n", i)
 				break;
 			case 'i':
 				i = va_arg(arg, int);
-				puts(convert(i, 10));
+				printf("%i\n", i);
 				break;
 			case 'u':
 				i = va_arg(arg, int);
-                                puts(convert(i, 10));
+                                printf("%u\n", i);
                                 break;
 		}
 	}
