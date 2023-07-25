@@ -32,34 +32,17 @@ int _printf(const char *format, ...)
 		}
 		switch (*round)
 		{
-			case 'c':
-				i = va_arg(arg, int);
+			case 'c': i = va_arg(arg, int);
 				putchar((char)i);
 				break;
-			case 's':
-				s = va_arg(arg, char *);
+			case 's': s = va_arg(arg, char *);
 				while (*s != '\0')
 				{
 					putchar(*s);
 					s++;
 				}
 				break;
-			case '%':
-				putchar('%');
-				break;
-			case 'd':
-				i = va_arg(arg, int);
-				if (i < 0)
-				{
-					putchar('-');
-					count++;
-					i = -i;
-				}
-				puts(convert(i, 10));
-				break;
-			case 'i':
-				i = va_arg(arg, int);
-				puts(convert(i, 10));
+			case '%': putchar('%');
 				break;
 		}
 	}
