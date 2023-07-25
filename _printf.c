@@ -26,11 +26,6 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		round++;
-		if (*round == '%')
-		{
-			putchar('%');
-			continue;
-		}
 		switch (*round)
 		{
 			case 'c':
