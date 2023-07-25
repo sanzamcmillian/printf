@@ -18,9 +18,9 @@ int _printf(const char *format, ...)
 	va_list arg;
 	va_start(arg, format);
 
-	for(round = format; *round != '\0'; round++)
+	for (round = format; *round != '\0'; round++)
 	{
-		if( *round != '%')
+		if (*round != '%')
 		{
 			putchar(*round);
 			count++;
@@ -36,13 +36,15 @@ int _printf(const char *format, ...)
 			continue;
 		}
 
-		switch(*round)
+		switch (*round)
 		{
-			case 'c' : i = va_arg(arg, int);
+			case 'c':
+				i = va_arg(arg, int);
 				putchar((char)i);
 				count++;
 				break;
-			case 's' : s = va_arg(arg, char *);
+			case 's':
+				s = va_arg(arg, char *);
 				while (*s != '\0')
 				{
 					putchar(*s);
@@ -50,12 +52,15 @@ int _printf(const char *format, ...)
 					count++;
 				}
 				break;
-			case '%' : putchar('%');
+			case '%':
+				putchar('%');
 				break;
-			case 'd' : i = va_arg(arg, int);
+			case 'd':
+				i = va_arg(arg, int);
 				printf("%d", i);
 				break;
-			case 'i' : i = va_arg(arg, int);
+			case 'i':
+				i = va_arg(arg, int);
 				printf("%i", i);
 				break;
 		}
@@ -69,7 +74,7 @@ int _printf(const char *format, ...)
  *
  *@num: the integer value to be converted
  *@base: integer to be used for conversion of num
- *Return: a character
+ *Return: ptr
  */
 
 char *convert(unsigned int num, int base)
@@ -83,9 +88,9 @@ char *convert(unsigned int num, int base)
 
 	do
 	{
-		*--ptr = representation[num%base];
+		*--ptr = representation[num % base];
 		num /= base;
-	}while(num != 0);
+	} while (num != 0);
 
 	return (ptr);
 }
