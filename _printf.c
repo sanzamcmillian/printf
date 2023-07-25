@@ -28,16 +28,18 @@ int _printf(const char *format, ...)
 		round++;
 		switch (*round)
 		{
-			count++;
+			
 			case 'c':
 				i = va_arg(arg, int);
 				putchar((char)i);
+				count++;
 				break;
 			case 's':
 				s = va_arg(arg, char *);
 				while (*s != '\0')
 				{
 					putchar(*s);
+					count++;
 					s++;
 				}
 				break;
