@@ -56,7 +56,7 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				break;
 			case 'd':
-				i = va_arg(arg, int); 
+				i = va_arg(arg, int);
 				if (i < 0)
 				{
 					_putchar('-');
