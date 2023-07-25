@@ -46,12 +46,10 @@ int _printf(const char *format, ...)
 			case '%' : putchar('%');
 				break;
 			case 'd' : i = va_arg(arg, int);
-				if(i < 0)
-				{
-					i = -i;
-					putchar('-');
-				}
-				puts(convert(i,10));
+				printf("%d", i);
+				break;
+			case 'i' : i = va_arg(arg, int);
+				printf("%i", i);
 				break;
 		}
 	}
