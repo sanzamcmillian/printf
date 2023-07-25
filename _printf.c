@@ -7,9 +7,9 @@
 
 int _printf(const char *format, ...)
 {
-	char *round;
+	const char *round;
 	unsigned int i;
-	char *s
+	char *s;
 	int count = 0;
 
 	va_list arg;
