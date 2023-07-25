@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdarg.h>
+
+/**
+* _putchaa - prints a char
+* @c: char to be printed
+* Return: c otherwise 0 if unsuccessful
+*/
+
+int _putchaa(char c)
+{
+return write(1, &c, 1);
+}
