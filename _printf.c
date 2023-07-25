@@ -51,9 +51,11 @@ int _printf(const char *format, ...)
 					i = -i;
 				}
 				puts(convert(i, 10));
+				break;
 			case 'i' | 'u':
 				i = va_arg(arg, int);
 				puts(convert(i, 10));
+				break;
 		}
 	}
 	va_end(arg);
