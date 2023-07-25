@@ -52,10 +52,14 @@ int _printf(const char *format, ...)
 				}
 				puts(convert(i, 10));
 				break;
-			case 'i' | 'u':
+			case 'i':
 				i = va_arg(arg, int);
 				puts(convert(i, 10));
 				break;
+			case 'u':
+				i = va_arg(arg, int);
+                                puts(convert(i, 10));
+                                break;
 		}
 	}
 	va_end(arg);
