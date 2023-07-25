@@ -43,6 +43,17 @@ int _printf(const char *format, ...)
 			case '%':
 				putchar('%');
 				break;
+			case 'd':
+				i  = va_arg(arg, int);
+				if (i < 0)
+				{
+					_putchar('-');
+					i = -i;
+				}
+				puts(convert(i, 10));
+			case 'i' | 'u':
+				i = va_arg(arg, int);
+				puts(convert(i, 10));
 		}
 	}
 	va_end(arg);
