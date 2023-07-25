@@ -48,7 +48,7 @@ int _printf(const char *format, ...)
 				break;
 			case 'b':
 				i = va_arg(arg, int);
-				puts(convert(i, 2);
+				puts(convert(i, 2));
 				break;
 		}
 	}
