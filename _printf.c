@@ -14,7 +14,6 @@ int _printf(const char *format, ...)
 	unsigned int i;
 	char *s;
 	int count = 0;
-	int j;
 
 	va_list arg;
 	va_start(arg, format);
@@ -23,7 +22,7 @@ int _printf(const char *format, ...)
 	{
 		if (*round != '%')
 		{
-			_putchar(*round);
+			putchar(*round);
 			count++;
 			continue;
 		}
@@ -32,7 +31,7 @@ int _printf(const char *format, ...)
 
 		if (*round == '%')
 		{
-			_putchar('%');
+			putchar('%');
 			count++;
 			continue;
 		}
@@ -41,42 +40,30 @@ int _printf(const char *format, ...)
 		{
 			case 'c':
 				i = va_arg(arg, int);
-				_putchar((char)i);
+				putchar((char)i);
 				count++;
 				break;
 			case 's':
 				s = va_arg(arg, char *);
 				while (*s != '\0')
 				{
-					_putchar(*s);
+					putchar(*s);
 					s++;
 					count++;
 				}
 				break;
 			case '%':
-				_putchar('%');
+				putchar('%');
 				break;
 			case 'd':
 				i = va_arg(arg, int);
 				if (i < 0)
 				{
-					_putchar('-');
+					putchar('-');
 					count++;
 					i = -i;
 				}
-				char buffer[20];
-				int len = 0;
-				do
-				{
-					buffer[len++] = '0' + i % 10;
-					i /= 10;
-				} while (i > 0);
-
-				for  (j = len -1; j >= 0; j--)
-				{
-					_putchar(buffer[j]);
-					count++;
-				}
+				puts(convert(i, 10));
 				break;
 			case 'i':
 				i = va_arg(arg, int);
