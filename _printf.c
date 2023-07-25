@@ -70,7 +70,6 @@ int _printf(const char *format, ...)
 				break;
 			case 'b':
 				i = va_arg(arg, int);
-				count++;
 				puts(convert(i, 2));
 				break;
 		}
