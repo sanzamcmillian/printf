@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	unsigned int i;
 	char *s;
 	int count = 0;
+	int j;
 
 	va_list arg;
 	va_start(arg, format);
@@ -56,7 +57,7 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				break;
 			case 'd':
-				i = va_arg(arg, int); 
+				i = va_arg(arg, int);
 				if (i < 0)
 				{
 					_putchar('-');
@@ -71,7 +72,7 @@ int _printf(const char *format, ...)
 					i /= 10;
 				} while (i > 0);
 
-				for  (int j = len -1; j >= 0; j--)
+				for  (j = len -1; j >= 0; j--)
 				{
 					_putchar(buffer[j]);
 					count++;
@@ -79,7 +80,7 @@ int _printf(const char *format, ...)
 				break;
 			case 'i':
 				i = va_arg(arg, int);
-				puts(convert(i, 10);
+				puts(convert(i, 10));
 				break;
 		}
 	}
