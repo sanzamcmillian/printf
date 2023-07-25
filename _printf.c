@@ -28,7 +28,15 @@ int _printf(const char *format, ...)
 		round++;
 		switch (*round)
 		{
-
+			case 'd':
+				i = va_arg(arg, int);
+				if (i < 0)
+				{
+					i = -i;
+					putchar('-');
+				}
+				puts(convert(i, 10);
+				break;
 			case 'c':
 				i = va_arg(arg, int);
 				putchar(i);
@@ -47,8 +55,16 @@ int _printf(const char *format, ...)
 				putchar('%');
 				break;
 			case 'b':
-				i = va_arg(arg, int);
+				i = va_arg(arg, unsigned int);
 				puts(convert(i, 2));
+				break;
+			case 'o':
+				i = va_arg(arg, unsigned int);
+				puts(convert(i, 8));
+				break;
+			case 'x':
+				i = va_arg(arg, unsigned int);
+				puts(convert(i, 16));
 				break;
 		}
 	}
