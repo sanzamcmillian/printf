@@ -46,6 +46,28 @@ int _printf(const char *format, ...)
 			case '%':
 				putchar('%');
 				break;
+			case 'd':
+			case 'i':
+				i = va_arg(arg, int);
+				if (i < 0)
+				{
+					_putchar('-');
+					count++;
+					i = -i;
+				}
+				char buffer[20];
+				int len = 0;
+				do
+				{
+                    buffer[len++] = '0' + i % 10;
+                    i /= 10;
+                } while (i > 0);
+                for (int j = len - 1; j >= 0; j--)
+                {
+                    _putchar(buffer[j]);
+                    count++;
+                }
+                break;
 			case 'b':
 				i = va_arg(arg, int);
 				puts(convert(i, 2));
