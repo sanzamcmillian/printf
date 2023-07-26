@@ -28,6 +28,16 @@ int _printf(const char *format, ...)
 		round++;
 		switch (*round)
 		{
+			case 'i':
+				i = va_arg(arg, int);
+				if (i < 0)
+				{
+					i = -i;
+					putchar('-');
+					count++;
+				}
+				fputs(convert(i, 10), stdout);
+				break;
 			case 'd':
 				i = va_arg(arg, int);
 				if (i < 0)
@@ -36,7 +46,7 @@ int _printf(const char *format, ...)
 					putchar('-');
 					count++;
 				}
-				puts(convert(i, 10));
+				fputs(convert(i, 10), stdout);
 				break;
 			case 'c':
 				i = va_arg(arg, int);
