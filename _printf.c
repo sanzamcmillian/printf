@@ -67,7 +67,7 @@ int _printf(const char *format, ...)
 				break;
 			case 'b':
 				i = va_arg(arg, int);
-				if (i < )
+				if (i < 0)
 				{
 					i = -i;
 					putchar('1');
