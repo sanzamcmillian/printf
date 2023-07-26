@@ -66,7 +66,13 @@ int _printf(const char *format, ...)
 				putchar('%');
 				break;
 			case 'b':
-				i = va_arg(arg, unsigned int);
+				i = va_arg(arg, int);
+				if (i < )
+				{
+					i = -i;
+					putchar('1');
+					count++;
+				}
 				fputs(convert(i, 2), stdout);
 				break;
 			case 'o':
