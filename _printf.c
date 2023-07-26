@@ -17,10 +17,6 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 
-	if (*format == NULL)
-	{
-		return (-1);
-	}
 	for (round = format; *round != '\0'; round++)
 	{
 		if (*round != '%')
