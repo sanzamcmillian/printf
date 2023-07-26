@@ -67,7 +67,7 @@ int _printf(const char *format, ...)
 				break;
 			case 'b':
 				i = va_arg(arg, unsigned int);
-				puts(convert(i, 2));
+				fputs(convert(i, 2), stdout);
 				break;
 			case 'o':
 				i = va_arg(arg, unsigned int);
