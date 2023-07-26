@@ -17,6 +17,10 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 
+	if (*format == NULL)
+	{
+		return (-1);
+	}
 	for (round = format; *round != '\0'; round++)
 	{
 		if (*round != '%')
@@ -68,9 +72,7 @@ int _printf(const char *format, ...)
 				puts(convert(i, 16));
 				break;
 			default:
-			putchar(*round);
-			count++;
-			break;
+				return (-1);
 		}
 	}
 	va_end(arg);
