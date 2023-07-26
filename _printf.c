@@ -34,8 +34,9 @@ int _printf(const char *format, ...)
 				{
 					i = -i;
 					putchar('-');
+					count++;
 				}
-				puts(convert(i, 10);
+				puts(convert(i, 10));
 				break;
 			case 'c':
 				i = va_arg(arg, int);
