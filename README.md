@@ -11,4 +11,9 @@ unsigned int - represents zero and positive numbers
 signed int - can represent both negative and positive numbers
 
 Task 2
+function converts the unsigned int argument to binary, b
 
+Task 3
+function handles these conversion specifiers: u, o, x, X
+
+Task 4
