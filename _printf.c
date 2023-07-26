@@ -64,6 +64,7 @@ int _printf(const char *format, ...)
 				break;
 			case '%':
 				putchar('%');
+				count++;
 				break;
 			case 'b':
 				i = va_arg(arg, int);
