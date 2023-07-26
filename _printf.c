@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	const char *round;
-	unsigned int i;
+	int i;
 	char *s;
 	int count = 0;
 	va_list arg;
