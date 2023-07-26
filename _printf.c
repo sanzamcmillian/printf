@@ -77,11 +77,11 @@ int _printf(const char *format, ...)
 				break;
 			case 'o':
 				i = va_arg(arg, unsigned int);
-				puts(convert(i, 8));
+				fputs(convert(i, 8), stdout);
 				break;
 			case 'x':
 				i = va_arg(arg, unsigned int);
-				puts(convert(i, 16));
+				fputs(convert(i, 16), stdout);
 				break;
 			default:
 				return (-1);
