@@ -67,6 +67,10 @@ int _printf(const char *format, ...)
 				i = va_arg(arg, unsigned int);
 				puts(convert(i, 16));
 				break;
+			default:
+			putchar(*round);
+			count++;
+			break;
 		}
 	}
 	va_end(arg);
