@@ -11,8 +11,12 @@
 char *convert(unsigned int num, int base)
 {
         static char representation[] = "0123456789ABCDEF";
-        static char buffer[50];
+        char *buffer = (char *)malloc(50 * sizeof(char));
         char *ptr;
+        if (!buffer)
+        {
+                return (NULL);
+        }
 
         ptr = &buffer[49];
         *ptr = '\0';
